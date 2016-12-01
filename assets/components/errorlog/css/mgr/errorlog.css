@@ -1,0 +1,7 @@
+.errorlog-empty {
+	display: none !important;
+}
+
+.errorlog-not-empty {
+	display: block !important;
+}
