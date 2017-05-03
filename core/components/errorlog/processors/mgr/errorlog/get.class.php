@@ -3,10 +3,7 @@
 	/**
 	 * Error Log
 	 *
-	 * Copyright 2016 by Oene Tjeerd de Bruin <info@oetzie.nl>
-	 *
-	 * This file is part of Error Log, a real estate property listings component
-	 * for MODX Revolution.
+	 * Copyright 2017 by Oene Tjeerd de Bruin <modx@oetzie.nl>
 	 *
 	 * Error Log is free software; you can redistribute it and/or modify it under
 	 * the terms of the GNU General Public License as published by the Free Software
@@ -24,13 +21,13 @@
 
 	class ErrorLogGetProcessor extends modProcessor {
 		/**
-		 * @acces public.
+		 * @access public.
 		 * @var Object.
 		 */
 		public $errorlog;
 		
 		/**
-		 * @acces public.
+		 * @access public.
 		 * @return Mixed.
 		 */
 		public function initialize() {
@@ -45,7 +42,7 @@
 		}
 		
 		/**
-		 * @acces public
+		 * @access public
 		 * @return Mixed.
 		 */
 		public function process() {
@@ -64,6 +61,7 @@
 	            $output['size'] = round(@filesize($errorlog) / 1000 / 1000, 2);
   
 	            if ($output['size'] > 1) {
+		            $output['size'] .= ' MiB';
 	                $output['tooLarge'] = true;
 	                
                     $lines = preg_split('/\\r\\n?|\\n/', @file_get_contents($errorlog));
@@ -98,7 +96,7 @@
 		}
 		
 		/**
-		 * @acces public
+		 * @access public
 		 * @return Boolean.
 		 */
 		public function checkPermissions() {

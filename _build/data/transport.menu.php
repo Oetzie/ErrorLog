@@ -21,7 +21,7 @@
 	    'menuindex' 	=> 0,
 	    'params' 		=> '',
 	    'handler' 		=> '',
-	    'permissions'	=> 'administrator'
+	    'permissions'	=> 'error_log_view'
 	), '', true, true);
 	
 	$menu->addOne($action);

@@ -1,7 +1,9 @@
-.errorlog-empty {
+.error-log-not-empty #error-log-refresh,
+.error-log-empty #error-log-show {
 	display: none !important;
 }
 
-.errorlog-not-empty {
+.error-log-empty #error-log-refresh,
+.error-log-not-empty #error-log-show {
 	display: block !important;
 }

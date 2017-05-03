@@ -3,10 +3,7 @@
 	/**
 	 * Error Log
 	 *
-	 * Copyright 2016 by Oene Tjeerd de Bruin <info@oetzie.nl>
-	 *
-	 * This file is part of Error Log, a real estate property listings component
-	 * for MODX Revolution.
+	 * Copyright 2017 by Oene Tjeerd de Bruin <modx@oetzie.nl>
 	 *
 	 * Error Log is free software; you can redistribute it and/or modify it under
 	 * the terms of the GNU General Public License as published by the Free Software
@@ -36,11 +33,11 @@
 		public $config = array();
 		
 		/**
-		 * @acces public.
+		 * @access public.
 		 * @param Object $modx.
 		 * @param Array $config.
-		*/
-		function __construct(modX &$modx, array $config = array()) {
+		 */
+		public function __construct(modX &$modx, array $config = array()) {
 			$this->modx =& $modx;
 		
 			$corePath 		= $this->modx->getOption('errorlog.core_path', $config, $this->modx->getOption('core_path').'components/errorlog/');
@@ -49,8 +46,7 @@
 		
 			$this->config = array_merge(array(
 				'namespace'				=> $this->modx->getOption('namespace', $config, 'errorlog'),
-				'helpurl'				=> $this->modx->getOption('namespace', $config, 'errorlog'),
-				'lexicons'				=> array('errorlog:default'),
+				'lexicons'				=> 'system_events',
 				'base_path'				=> $corePath,
 				'core_path' 			=> $corePath,
 				'model_path' 			=> $corePath.'model/',
@@ -66,6 +62,10 @@
 				'css_url' 				=> $assetsUrl.'css/',
 				'assets_url' 			=> $assetsUrl,
 				'connector_url'			=> $assetsUrl.'connector.php',
+				'version'				=> '1.0.1',
+				'branding'				=> (boolean) $this->modx->getOption('socialmedia.branding', null, true),
+				'branding_url'			=> 'http://www.oetzie.nl',
+				'branding_help_url'		=> 'http://www.werkvanoetzie.nl/extras/errorlog'
 			), $config);
 		
 			$this->modx->addPackage('errorlog', $this->config['model_path']);
@@ -80,32 +80,12 @@
 		}
 		
 		/**
-		 * @acces public.
+		 * @access public.
 		 * @return String.
 		 */
 		public function getHelpUrl() {
-			return $this->config['helpurl'];
+			return $this->config['branding_help_url'].'?v='.$this->config['version'];
 		}
-		
-		/**
-		 * @acces public.
-		 * @return Boolean.
-		 */
-		/*public function hasPermission() {
-			$usergroups = $this->modx->getOption('clientsettings.admin_groups', null, 'Administrator');
-			
-			$isMember = $this->modx->user->isMember(explode(',', $usergroups), false);
-			
-			if (!$isMember) {
-				$version = $this->modx->getVersionData();
-				
-				if (version_compare($version['full_version'], '2.2.1-pl') == 1) {
-					$isMember = (bool) $this->modx->user->get('sudo');
-				}
-			}
-			
-			return $isMember;
-		}*/
 	}
 	
 ?>

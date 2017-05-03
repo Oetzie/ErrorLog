@@ -3,6 +3,14 @@ Error Log
 ----------------------
 
 ----------------------
+Version: 1.0.1
+Released: 2017-05-03
+----------------------
+- Small functional updates
+- Connector includes fixed for custom core path
+- Refresh log function (when the log is empty)
+
+----------------------
 Version: 1.0.0
 Released: 2016-12-01
 ----------------------
