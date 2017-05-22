@@ -8,6 +8,7 @@ Ext.onReady(function() {
 				'</a>' +
 				'<a href="javascript:;" id="error-log-show" title="' + _('error_log') + '" onclick="ErrorLog.show(); return false;">' +
 					'<i class="icon-exclamation-triangle icon icon-large"></i>' +
+					'<span class="error-log-indicator"></span>' +
 				'</a>' +
 			'</div>';
 		
@@ -226,6 +227,8 @@ ErrorLog.refresh = function(state) {
 			'success'	: {
 				fn			: function (data) {
 					if (undefined !== (link = Ext.get(Ext.query('#error-log')))) {
+						Ext.get(Ext.query('.error-log-indicator')).update(data.object.lines);
+						
 						if (data.object.empty) {
 							link.addClass('error-log-empty').removeClass('error-log-not-empty');
 						} else {

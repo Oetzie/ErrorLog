@@ -7,3 +7,21 @@
 .error-log-not-empty #error-log-show {
 	display: block !important;
 }
+
+.error-log-indicator {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	min-width: 6px;
+	height: 16px;
+	color: #46504d;
+	font-size: 10px;
+	line-height: 16px;
+	font-weight: 600;
+	padding: 0 5px 0 4px;
+	margin: 0 0 0 -10px;
+	background: #ffffff;
+	-webkit-border-radius: 8px;
+	   -moz-border-radius: 8px;
+	   		border-radius: 8px;
+}
