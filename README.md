@@ -1,3 +1,6 @@
+# MODX ErrorLog
+![Errorlog version](https://img.shields.io/badge/version-1.0.1-blue.svg) ![MODX Extra by Oetzie.nl](https://img.shields.io/badge/checked%20by-oetzie-blue.svg) ![MODX version requirements](https://img.shields.io/badge/modx%20version%20requirement-2.4%2B-brightgreen.svg)
+
 ## Error Log
 As a developer, you spend a great part of your time chasing down errors. This means that a common task of your workflow will be checking your error log. Since you'll perform this task over and over again, you probably want to minimize the process. [Oetzie][1] introduced ErrorLog as a MODX Extra to give you (as a developer) a direct view on the error status of your MODX website.
 
